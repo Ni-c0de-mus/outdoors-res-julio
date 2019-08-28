@@ -12,7 +12,7 @@
 }
 
 :root {
-    --light-blue-color : #4f5fe9;
+    --light-blue-color: #4f5fe9;
     --blue-color: #2e3dc9;
     --tomato-color: #ff433d;
     --yellow-color: #ffb347;
@@ -53,7 +53,7 @@ section {
 }
 
 body {
-   /* background-color: var(--tomato-color); */
+    /* background-color: var(--tomato-color); */
 }
 
 /* Header */
@@ -94,13 +94,14 @@ nav {
 }
 
 .close i {
-    color: var(--yellow-color);
+    color: #fafafa;
 }
 
 .nav-list {
     width: 25rem;
     height: 100vh;
-    background-color: var(--magenta-color);
+    /* background-color: var(--blue-color); */
+    background: linear-gradient(135deg, rgba(79, 95, 233, 1) 0%, rgba(46, 61, 201, 1) 100%);
     position: fixed;
     top: 0;
     right: -26rem;
@@ -130,7 +131,7 @@ nav {
 .nav-link {
     font-size: 1.6rem;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, .7);
+    color: #fafafa;
 }
 
 .hero {
@@ -145,7 +146,7 @@ nav {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -3px;
     width: 100%;
     height: 4.7rem;
     background: url("../img/wave-small.png") center no-repeat;
@@ -166,7 +167,7 @@ nav {
 
 .main-message h1 {
     font-family: var(--pacifico), sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 1rem 0;
 }
 
@@ -175,7 +176,7 @@ nav {
 }
 
 .btn {
-    background-color:  var(--blue-color);
+    background-color: var(--blue-color);
     color: #fafafa;
     border-radius: 2rem;
     display: inline-block;
@@ -215,4 +216,206 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 2.5rem;
+}
+
+.activities-grid-item {
+    height: 40rem;
+    padding: 5rem;
+    color: #fafafa;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.activities-grid-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, rgba(255, 67, 61, 0.9) 0%, rgba(255, 179, 71, 0.8) 100%);
+    z-index: -1;
+}
+
+.star-gazing {
+    background: url(../img/stars.jpg);
+}
+
+.hiking {
+    background: url(../img/hiking.jpg);
+}
+
+.camping {
+    background: url(../img/camping.jpg);
+}
+
+.activities-grid-item i {
+    font-size: 4rem;
+    color: var(--blue-color);
+}
+
+.activities-grid-item h1 {
+    font-family: var(--pacifico);
+    font-size: 1.7rem;
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+.testimonials {
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(135deg, rgba(255, 67, 61, 0.9) 0%, rgba(255, 179, 71, 0.8) 100%), url("../img/testimonials-bg.jpg") center no-repeat fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.testimonials::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4.7rem;
+    background: url(../img/wave-small-reversed.png) center no-repeat;
+    background-size: cover;
+}
+
+.testimonial {
+    width: 100%;
+    color: #fafafa;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.testimonial-text-box {
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.testimonial-text-box i {
+    position: absolute;
+    top: -8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8rem;
+    color: var(--blue-color);
+    opacity: .5;
+    z-index: -1;
+}
+
+.testimonial-customer img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    border: 3px solid var(--blue-color);
+}
+
+/* Begin adventures */
+
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.adventures-grid p {
+    color: #fafafa;
+}
+
+footer {
+    padding: 2.5rem 0;
+    background-color: #704810;
+    text-align: center;
+    color: #fafafa;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 350px){
+    .main-message {
+        transform: translateY(40%);
+    }
+
+    .main-message h1 {
+        font-size: 4rem;
+        letter-spacing: 1rem;
+    }
+}
+
+@media screen and (min-width: 470px) {
+    .hero::before img {
+        height: 9.4rem;
+        background: url(../img/wave-medium.png);
+        background-size: cover;
+    }
+
+    .testimonials::before {
+        height: 9.4rem;
+        background: url(../img/wave-medium-reversed.png);
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .header {
+        height: 8rem;
+    }
+
+    .nav-list {
+        width: initial;
+        height: initial;
+        background: transparent;
+        position: initial;
+        top: 0;
+        right: initial;
+        flex-direction: row;
+        transition: initial;
+    }
+
+    .menu-icons {
+        display: none;
+    }
+
+    .nav-item {
+        margin: 0 2.5rem;
+    }
+
+    .nav-link .current {
+        background-color: transparent;
+        position: relative;
+        font-size: 1.3rem;
+
+    }
+
+    .nav-link::before,
+    .current::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -.5rem;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 650ms;
+    }
+
+    .current::before {
+        transform: scaleX(1);
+    }
+
+    .nav-link:hover::before {
+
+    }
 }
